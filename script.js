@@ -1,14 +1,26 @@
 console.log("hello world")
 
-let getComputerChoise = "" ;
-getComputerChoise = Math.floor(Math.random() * 3) + 1;
+function getComputerChoice() {
+let computerChoice = Math.floor(Math.random() * 3) + 1;
 
-if (getComputerChoise === 1) {
-    getComputerChoise = "Rock";
-} else if (getComputerChoise === 2) {
-    getComputerChoise = "Scissors";
-} else if (getComputerChoise === 3) {
-    getComputerChoise = "Paper";
+if (computerChoice === 1) {
+    return "Rock";
+} else if (computerChoice === 2) {
+    return "Scissors";
+} else if (computerChoice === 3) {
+    return "Paper";
 }
 
-console.log(getComputerChoise);
+};
+getComputerChoice();
+console.log(getComputerChoice());
+
+function getHumanChoice() {
+    let humanChoise = prompt("Please, choose one: Rock, Paper or Scissors");
+    return humanChoise;
+}
+getComputerChoice();
+console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
