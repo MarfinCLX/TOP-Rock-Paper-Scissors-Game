@@ -12,29 +12,17 @@ if (choice === 1) {
 }
 
 };
-getComputerChoice();
-console.log(getComputerChoice());
 
 function getHumanChoice() {
     let choice = prompt("Please, choose one: Rock, Paper or Scissors");
-    return choice;
+    return choice; 
 }
-getComputerChoice();
-console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     humanChoice =  humanChoice.toLowerCase();
-/*
-    if (humanChoice === "ROCK") {
-        return "Rock";
-    } else if (humanChoice === "SCISSORS") {
-        return "Scissors";
-    } else if (humanChoice === "PAPER") {
-        return "Paper";
-    } */
 
     if ((humanChoice === "rock" && computerChoice === "Scissors") || (humanChoice === "paper" && computerChoice === "Rock") ||
      (humanChoice === "scissors" && computerChoice === "Paper")) {
