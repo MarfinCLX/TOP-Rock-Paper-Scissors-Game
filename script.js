@@ -21,6 +21,10 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function playGame() { 
+
+for (let rounds = 4; rounds >= 0; rounds--) {
+
 function playRound(humanChoice, computerChoice) {
     humanChoice =  humanChoice.toLowerCase();
 
@@ -29,34 +33,49 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         console.log(`
             You win!
-            Your choice '${humanChoice}'.
-            Computer choice '${computerChoice}'
-            Human Score: '${humanScore}'
-            Computer Score: '${computerScore}'
+            Your choice ${humanChoice}.
+            Computer choice ${computerChoice}.
+            Human Score: ${humanScore}.
+            Computer Score: ${computerScore}.
+            Rounds left: ${rounds}.
             `)
      } else if ((humanChoice === "scissors" && computerChoice === "Rock") || (humanChoice === "rock" & computerChoice === "Paper") ||
      (humanChoice === "paper" && computerChoice === "Scissors")) {
         computerScore++;
         console.log(`
             You lost!
-            Your choice '${humanChoice}'.
-            Computer choice '${computerChoice}'
-            Human Score: '${humanScore}'
-            Computer Score: '${computerScore}'
+            Your choice ${humanChoice}.
+            Computer choice ${computerChoice}.
+            Human Score: ${humanScore}.
+            Computer Score: ${computerScore}.
+            Rounds left: ${rounds}.
             `)
      } else if ((humanChoice === "scissors" && computerChoice === "Scissors") || (humanChoice === "rock" && computerChoice === "Rock") || 
      (humanChoice === "paper" && computerChoice === "Paper")) {
         console.log(`
             It's a draw!
-            Your choice '${humanChoice}'.
-            Computer choice '${computerChoice}'
-            Human Score: '${humanScore}'
-            Computer Score: '${computerScore}'
+            Your choice ${humanChoice}.
+            Computer choice ${computerChoice}.
+            Human Score: ${humanScore}.
+            Computer Score: ${computerScore}.
+            Rounds left: ${rounds}.
             `)
-     };
-};
+             };
+        };
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection); 
+
+        if (rounds === 0 && humanScore > computerScore) {
+            console.log("Congratulations! You won the game!");
+        } else if (rounds === 0 && humanScore < computerScore) {
+            console.log("You lost the game! Reload the page and try again.");
+        } else if (rounds === 0 && humanScore === computerScore) {
+            console.log("It's a tie!");
+        };
+    };
+}; 
+
+playGame();
